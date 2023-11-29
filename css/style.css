@@ -1,0 +1,108 @@
+body {
+    background-image: url(/cs472/lab-02/images/depositphotos_36366775-stock-photo-blue-professional-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.description {
+    color: gold;
+   font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.description::first-letter {
+    font-size: larger;
+}
+
+.Class {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Class:hover {
+    color: red;
+
+}
+
+.Courses {
+    list-style: upper-roman;
+    color: gold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Movies {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Movies:hover {
+    color: red;
+}
+
+.typesofMovies {
+    color: gold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.Moods {
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Moods:hover {
+    color: red;
+}
+
+p {
+    color: gold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.happy {
+    width: 200px;
+    height: 200px;
+}
+
+.angry {
+    width: 200px;
+    height: 200px;
+}
+
+.Facts {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Facts:hover {
+    color: red;
+}
+
+.Neighbors {
+    color: gold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.aboutMovie {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    color: black;
+    font-weight: bolder;
+}
+
+.Director {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    color: black;
+}
+
+.name {
+    color: white;
+}
