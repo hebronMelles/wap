@@ -1,9 +1,7 @@
 body{
     background-color: rgb(243, 239, 239);
 }
-header{
-    background-color: white;
-}
+
 .pages{
     display: flex;
   width: 100vw; 
@@ -15,8 +13,7 @@ header{
    height: 30px;
  float: left;
  border-right: 1px solid black ;
- 
- 
+ padding-right: 1%;
  
 }
 .h1{
@@ -25,6 +22,7 @@ header{
    color: white;
   font-family: sans-serif;
   padding: 55px;
+  
 
 }
 .nav>li{
@@ -33,6 +31,10 @@ header{
    list-style: none;
    margin-right: 1%;
    opacity: 50%;
+   margin-top: -15px;
+
+   
+   
 }
 .login{
     font-family: sans-serif;
