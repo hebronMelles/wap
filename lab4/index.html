@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/wap/css/lab4Style.css">
+    <title>Search WebPage</title>
+</head>
+<body>
+   <form action="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiRgNzZ6e-CAxXEomoFHZeLDcEQFnoECA0QAQ&url=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&usg=AOvVaw1GRqnzaEzJ-JntPiR5Sc98&opi=89978449" method="post">
+       <div class="website">Website URL </div>
+       <br>
+       <input class="webinput" type="text" name="website" placeholder="Website URL" pattern="^(https?://).*$" title="URL should start with http or https" required>
+
+       <div class="firstname">First Name </div>
+       <br>
+       <input class="firstinput" type="text" name="firstname" placeholder="First Name" pattern="^[A-Z][a-zA-Z]{1,}$" title="First name should start with an uppercase letter and be at least 2 characters long" required>
+
+       <div class="email">Email</div>
+       <br>
+       <input class="emailinput" type="text" name="email" placeholder="Enter Email" required>
+
+       <div class="password">Password </div>
+       <br>
+       <input class="passinput" type="password" name="password" minlength="10" required>
+       <br>
+       <input class="submit" type="submit" value="Submit">
+   </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+.top{
+    border: 1px solid blue;
+    background-color:rgb(9, 165, 227);
+    color: white;
+    font-family: sans-serif;
+    font-size: large;
+    padding-bottom: 3%;
+}
+.mum{
+    padding-right: 8%;
+    border-right: 2px solid white;
+}
+.products{
+    padding-right: 4%;
+    border-right: 2px solid white;
+}
+.Suppliers{
+    padding-right: 40%;
+}
+.hello{
+    padding-right: 2%;
+}
+
+.pages{
+        display: flex;
+      width: 100vw; 
+      height: 100vh; 
+}
+.leftpage, .rightpage{
+        flex: 1;
+        box-sizing: border-box;
+}
+.productform{
+    font-family: sans-serif;
+    font-size: x-large;
+    padding-top: 5%;
+}
+.pnumber{
+    font-family: sans-serif;
+    font-size: large;
+    padding-top: 5%;
+}
+.numberinput{
+   width: 80%; 
+   height: 3%;
+}
+.name{
+    font-family: sans-serif;
+    font-size: larger;
+    padding-top: 5%;
+}
+.nameinput{
+    width: 80%; 
+   height: 3%;
+}
+.unitprice{
+    font-family: sans-serif;
+    font-size: larger;
+    padding-top: 5%;
+}
+.priceinput{
+    width: 80%; 
+   height: 3%;
+}
+.quantity{
+    font-family: sans-serif;
+    font-size: larger;
+    padding-top: 5%;
+}
+.quantityinput{
+    width: 80%; 
+   height: 3%;
+}
+.supply{
+    font-family: sans-serif;
+    font-size: larger;
+    padding-top: 5%;
+}
+.date{
+    font-family: sans-serif;
+    font-size: larger;
+    padding-top: 3.5%;
+}
+.dateinput{
+    width: 80%; 
+   height: 3%;
+   padding-bottom: 1%;
+}
+select{
+   width: 80%;
+   height:0.5% ;
+   padding-top: 4%;
+}
+.buttons{
+    padding-top: 2%;
+    padding-left: 32%;
+}
+.reset{
+    padding-left: 10%;
+}
+.cancel{
+    padding-left: 10%;
+}
+.add{
+    padding-left: 10%;
+}
+.valid{
+    opacity: 50%;
+}
+
+

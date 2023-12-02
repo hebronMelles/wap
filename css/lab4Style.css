@@ -1,0 +1,49 @@
+.website{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    
+}
+.webinput{
+   width: 95%;
+   padding: 1%;
+   border-radius: 10px;
+   margin-bottom: 3%;
+}
+.firstname{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+   
+}
+.firstinput{
+    width: 95%;
+   padding: 1%;
+   border-radius: 10px;
+   margin-bottom: 3%;
+}
+.eamil{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+.emailinput{
+    width: 95%;
+    padding: 1%;
+    border-radius: 10px;
+    margin-bottom: 3%;
+}
+.password{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+.passinput{
+    width: 95%;
+    padding: 1%;
+    border-radius: 10px;
+}
+.submit{
+    width: 10%;
+    margin-top: 3%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
