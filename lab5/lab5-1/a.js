@@ -134,3 +134,10 @@ function printFibo(n,a,b){
     return fibo;
 }
 console.log(printFibo(12,0,1));
+
+
+
+
+console.log(as);
+var as = "k";
+console.log(as);
