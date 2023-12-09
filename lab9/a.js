@@ -1,76 +1,94 @@
-/* properties:
-studentId: a unique student id. it is number type.
-answers: holds an array that records the student's answers for the questions.
-method:
-addAnswer(question) - add student's question(id, answer) to answers array.*/
-
-
-
-
-class Student{
-    studentId;
-    answers = [];
-    constructor(id){
-        this.studentId = id;
+class Student {
+    constructor(studentId) {
+      this.studentId = studentId;
+      this.answers = [];
     }
-    addAnswer = function(question){
-         answers.push(question);
+  
+    addAnswer(question) {
+      this.answers.push(question);
     }
-}
-
-class Question{
-    questionId;
-    answers ;
-    
-    constructor(id,answer){
-        this.questionId = id;
-        this.answers = answer;
-        
+  }
+  
+  class Question {
+    constructor(qid, answer) {
+      this.qid = qid;
+      this.answer = answer;
     }
-    checkAnswer = function(studanswer){
-    return answers === studanswer;
-    
+  
+    checkAnswer(studentAnswer) {
+      return this.answer === studentAnswer;
     }
-}
-
-class Quiz extends Question{
-    students = [];
-    questions = new Map();
-    constructor(questionId, stud){
-        this.students.push(stud);
-        this.questions.set(Question,this.students);
-
+  }
+  
+  class Quiz {
+    constructor(questions, students) {
+      this.questions = new Map();
+      this.students = students;
+  
+      questions.forEach((question) => {
+        this.questions.set(question.qid, question.answer);
+      });
     }
-    //scoreStudentBySid(sid), computes the quiz score for this student
- //getAverageScore(), computes the average score over all students
-    //
-
-    scoreStudentBySid = function(sid){
-        let num = 0;
-         for(let i = 0; i < this.students.length; i++){
-            if(sid === students[i].studentId){
-                for(let y = 0; y < this.students[i].length; y++){
-               if(questions.get(questionId).checkAnswer === true){
-                num++;
-               }
-                }
-            }
-         }
-         return num;
+  
+    scoreStudentBySid(sid) {
+      const student = this.students.find((s) => s.studentId === sid);
+  
+      if (!student) {
+        return 0;
+      }
+  
+      let score = 0;
+  
+      student.answers.forEach((studentAnswer) => {
+        const correctAnswer = this.questions.get(studentAnswer.qid);
+  
+        if (correctAnswer && correctAnswer === studentAnswer.answer) {
+          score++;
+        }
+      });
+  
+      return score;
     }
-
-}
-const student1 = new Student(10);
-student1.addAnswer(new Question(2, 'a'));
-student1.addAnswer(new Question(3, 'b'));
-student1.addAnswer(new Question(1, 'b'));
-const student2 = new Student(11);
-student2.addAnswer(new Question(3, 'b'));
-student2.addAnswer(new Question(2, 'a'));
-student2.addAnswer(new Question(1, 'd'));
-const students = [student1, student2];
-const questions =[new Question(1, 'b'), new Question(2, 'a'), new
-Question(3, 'b')];
-const quiz = new Quiz(questions, students);
-let scoreforStudent10 = quiz.scoreStudentBySid(10);
-console.log(scoreforStudent10);
+  
+    getAverageScore() {
+      if (this.students.length === 0) {
+        return 0;
+      }
+  
+      const totalScore = this.students.reduce((total, student) => {
+        return total + this.scoreStudentBySid(student.studentId);
+      }, 0);
+  
+      return totalScore / this.students.length;
+    }
+  }
+  
+  const student1 = new Student(10);
+  student1.addAnswer(new Question(2, 'a'));
+  student1.addAnswer(new Question(3, 'b'));
+  student1.addAnswer(new Question(1, 'b'));
+  
+  const student2 = new Student(11);
+  student2.addAnswer(new Question(3, 'b'));
+  student2.addAnswer(new Question(2, 'a'));
+  student2.addAnswer(new Question(1, 'd'));
+  
+  const students = [student1, student2];
+  
+  const questions = [
+    new Question(1, 'b'),
+    new Question(2, 'a'),
+    new Question(3, 'b'),
+  ];
+  
+  const quiz = new Quiz(questions, students);
+  
+  let scoreforStudent10 = quiz.scoreStudentBySid(10);
+  console.log(scoreforStudent10);
+  
+  let scoreforStudent11 = quiz.scoreStudentBySid(11);
+  console.log(scoreforStudent11);
+  
+  let average = quiz.getAverageScore();
+  console.log(average);
+  
