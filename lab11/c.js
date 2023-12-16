@@ -3,43 +3,42 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-  let filePath = '';
+  if (req.url === '/image') {
+    const imagePath = '/Users/hebronmelles/Desktop/wap/wap/images/IMG_4773.jpg';
 
-  switch (req.url) {
-    case '/image':
-      filePath = path.join(__dirname, '../wap');
-      sendFileResponse(filePath, 'image/jpeg', res);
-      break;
-
-    case '/pdf':
-      filePath = path.join(__dirname, 'path/to/your/document.pdf');
-      sendFileResponse(filePath, 'application/pdf', res);
-      break;
-
-    case '/home':
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end('Welcome to my website');
-      break;
-
-    default:
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('Not Found');
+    fs.readFile(imagePath, (err, data) => {
+      if (err) {
+        console.error('Error reading file:', err);
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        res.end('Internal Server Error');
+      } else {
+        res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+        res.end(data);
+      }
+    });
   }
+  if (req.url === '/pdf'){
+    const pdfPath = '/Users/hebronmelles/Desktop/wap/wap/lab11/pdf/lesson11-1NodeJsIntro.pdf';
+    fs.readFile(pdfPath, (err, data) => {
+      if (err) {
+        console.error('Error reading file:', err);
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        res.end('Internal Server Error');
+      } else {
+        res.writeHead(200, { 'Content-Type': 'pdf' });
+        res.end(data);
+      }
+    });
+  }
+  else if (req.url === '/home') {
+    
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Welcome to my website');
+  } 
+
+
 });
 
-function sendFileResponse(filePath, contentType, res) {
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('Internal Server Error');
-    } else {
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(data);
-    }
-  });
-}
-
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+server.listen(3001, () => {
+  console.log('Server is running on http://localhost:3001');
 });
